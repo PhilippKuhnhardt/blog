@@ -11,14 +11,13 @@ export async function getStaticPaths() {
     .filter(post => !post.data.draft)
     .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
   return posts.map((post) => ({
-    params: { slug: post.slug },
+    params: { slug: post.id },
     props: post,
   }));
 }
 type Props = CollectionEntry<"blog">;
 
 const post = Astro.props;
-const { Content } = await post.render();
 ---
 
 <PageLayout title={post.data.title} description={post.data.description}>
@@ -35,7 +34,7 @@ const { Content } = await post.render();
         </div>
         &bull;
         <div class="font-base text-sm">
-          {readingTime(post.body)}
+          {post.body && readingTime(post.body)}
         </div>
       </div>
       <div class="animate text-2xl font-semibold text-black dark:text-white">
@@ -43,7 +42,7 @@ const { Content } = await post.render();
       </div>
     </div>
     <article class="animate">
-      <Content />
+      {post.rendered?.html && <div set:html={post.rendered.html} />}
     </article>
   </Container>
 </PageLayout>

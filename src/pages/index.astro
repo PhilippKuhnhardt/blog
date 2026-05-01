@@ -23,8 +23,7 @@ const allwork = (await getCollection("work"))
 
 const work = await Promise.all(
   allwork.map(async (item) => {
-    const { Content } = await item.render();
-    return { ...item, Content };
+    return item
   })
 );
 
@@ -103,7 +102,7 @@ const work = await Promise.all(
                 {entry.data.role}
               </div>
               <article>
-                <entry.Content />
+                {entry.rendered?.html && <div set:html={entry.rendered.html} />}
               </article>
             </li>
           ))}

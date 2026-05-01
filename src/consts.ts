@@ -29,16 +29,20 @@ export const PROJECTS: Metadata = {
 };
 
 export const SOCIALS: Socials = [
-  { 
+  {
     NAME: "twitter-x",
     HREF: "https://twitter.com/markhorn_dev",
   },
-  { 
+  {
     NAME: "github",
     HREF: "https://github.com/markhorn-dev"
   },
-  { 
+  {
     NAME: "linkedin",
     HREF: "https://www.linkedin.com/in/markhorn-dev",
+  },
+  {
+    NAME: "rss",
+    HREF: "http://localhost:4321/rss.xml", // TODO dynamic URL
   }
 ];
