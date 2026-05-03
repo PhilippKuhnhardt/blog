@@ -2,6 +2,7 @@
 import Container from "@components/Container.astro";
 import { SITE } from "@consts";
 import BackToTop from "@components/BackToTop.astro";
+import RSSIcon from "@assets/rss.svg";
 ---
 
 <footer class="animate">
@@ -13,9 +14,14 @@ import BackToTop from "@components/BackToTop.astro";
     </div>
     <div class="flex justify-between items-center">
       <div>
-        &copy; 2026 {`|`} {SITE.NAME}
+        &copy; 2026 {`|`}
+        {SITE.NAME}
       </div>
-      <div class="flex flex-wrap gap-1 items-center">
+      <div class="flex flex-wrap gap-2 items-center">
+        <a href="/rss.xml" class="flex items-center gap-1">
+          <RSSIcon class="w-3 h-3 fill-current" />
+          RSS
+        </a>
         <button
           id="theme-toggle"
           aria-label="Toggle theme"
