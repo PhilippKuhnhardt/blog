@@ -42,6 +42,12 @@ const work = await Promise.all(
             my personal projects and other stuff I might find interesting and learn about.
           </p>
         </article>
+        <article class="space-y-4">
+          <p class="animate">
+            I'm from Germany and currently working as a software engineer at Robert Bosch GmbH in Stuttgart.
+            In my past time I like motorsports, cooking and good espresso.
+          </p>
+        </article>
       </section>
 
       <section class="animate space-y-6">
@@ -57,6 +63,24 @@ const work = await Promise.all(
           {blog.map(post => (
             <li>
               <ArrowCard entry={post} />
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section class="animate space-y-6">
+        <div class="flex flex-wrap gap-y-2 items-center justify-between">
+          <h5 class="font-semibold text-black dark:text-white">
+            Recent projects
+          </h5>
+          <Link href="/projects">
+            See all projects
+          </Link>
+        </div>
+        <ul class="flex flex-col gap-4">
+          {projects.map(project => (
+            <li>
+              <ArrowCard entry={project} />
             </li>
           ))}
         </ul>
@@ -91,24 +115,6 @@ const work = await Promise.all(
         </ul>
       </section>
 
-      <section class="animate space-y-6">
-        <div class="flex flex-wrap gap-y-2 items-center justify-between">
-          <h5 class="font-semibold text-black dark:text-white">
-            Recent projects
-          </h5>
-          <Link href="/projects">
-            See all projects
-          </Link>
-        </div>
-        <ul class="flex flex-col gap-4">
-          {projects.map(project => (
-            <li>
-              <ArrowCard entry={project} />
-            </li>
-          ))}
-        </ul>
-      </section>
-
       <section class="animate space-y-4">
         <h5 class="font-semibold text-black dark:text-white">
           Let's Connect
@@ -116,7 +122,7 @@ const work = await Promise.all(
         <article>
           <p>
             If you want to get in touch with me about something or just to say hi,
-            send me an email.
+            just reach out on social media or send me an email.
           </p>
         </article>
         <ul class="flex flex-wrap gap-2">

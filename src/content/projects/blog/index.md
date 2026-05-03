@@ -1,6 +1,6 @@
 ---
 title: "My blog"
-description: "Personal blog build with astro."
+description: "Personal blog build with astro"
 date: "03. May 2026"
 demoURL: "https://philippkuhnhardt.de"
 repoURL: "https://github.com/PhilippKuhnhardt/blog"
