@@ -87,31 +87,16 @@ const { title, description, image = "/nano.png" } = Astro.props;
     const backToPrev = document.getElementById("back-to-prev");
     backToPrev?.addEventListener("click", () => window.history.back());
 
-    const lightThemeButton = document.getElementById("light-theme-button");
-    lightThemeButton?.addEventListener("click", () => {
-      localStorage.setItem("theme", "light");
-      toggleTheme(false);
+    const themeToggle = document.getElementById("theme-toggle");
+    themeToggle?.addEventListener("click", () => {
+      const isDark = document.documentElement.classList.contains("dark");
+      const newTheme = isDark ? "light" : "dark";
+
+      localStorage.setItem("theme", newTheme);
+      toggleTheme(newTheme === "dark");
+      updateThemeIcon(newTheme === "dark");
     });
 
-    const darkThemeButton = document.getElementById("dark-theme-button");
-    darkThemeButton?.addEventListener("click", () => {
-      localStorage.setItem("theme", "dark");
-      toggleTheme(true);
-    });
-
-    const systemThemeButton = document.getElementById("system-theme-button");
-    systemThemeButton?.addEventListener("click", () => {
-      localStorage.setItem("theme", "system");
-      toggleTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
-    });
-
-    window.matchMedia("(prefers-color-scheme: dark)")
-      .addEventListener("change", event => {
-        if (localStorage.theme === "system" || !localStorage.theme) {
-          toggleTheme(event.matches);
-        }
-      }
-    );
 
     document.addEventListener("scroll", onScroll);
   }
@@ -170,14 +155,33 @@ function toggleTheme(dark) {
     document.head.removeChild(css);
   }
 
+  function updateThemeIcon(isDark) {
+    const lightIcon = document.getElementById("theme-toggle-light-icon");
+    const darkIcon = document.getElementById("theme-toggle-dark-icon");
+
+    if (!lightIcon || !darkIcon) return;
+
+    if (isDark) {
+      lightIcon.classList.remove("hidden");
+      darkIcon.classList.add("hidden");
+    } else {
+      lightIcon.classList.add("hidden");
+      darkIcon.classList.remove("hidden");
+    }
+  }
+
   function preloadTheme() {
     const userTheme = localStorage.theme;
+    let isDark;
 
     if (userTheme === "light" || userTheme === "dark") {
-      toggleTheme(userTheme === "dark");
+      isDark = userTheme === "dark";
     } else {
-      toggleTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
+      isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
     }
+
+    toggleTheme(isDark);
+    updateThemeIcon(isDark);
   }
 
   document.addEventListener("DOMContentLoaded", () => init());
