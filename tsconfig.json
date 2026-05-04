@@ -3,7 +3,12 @@
   "compilerOptions": {
     "strictNullChecks": true,
     "paths": {
-      "@*": ["./src/*"]
+      "@components/*": ["./src/components/*"],
+      "@layouts/*": ["./src/layouts/*"],
+      "@assets/*": ["./src/assets/*"],
+      "@lib/*": ["./src/lib/*"],
+      "@consts": ["./src/consts.ts"],
+      "@types": ["./src/types.ts"],
     },
     "verbatimModuleSyntax": true
   },
