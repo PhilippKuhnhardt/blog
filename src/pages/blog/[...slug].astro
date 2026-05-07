@@ -22,11 +22,11 @@ const post = Astro.props;
 
 <PageLayout title={post.data.title} description={post.data.description}>
   <Container>
-    <div class="animate">
+    <div>
       <BackToPrev href="/blog"> Back to blog </BackToPrev>
     </div>
     <div class="space-y-1 my-10">
-      <div class="animate flex items-center gap-1.5">
+      <div class="flex items-center gap-1.5">
         <div class="font-base text-sm">
           Published: <FormattedDate date={post.data.date} />
         </div>
@@ -38,7 +38,7 @@ const post = Astro.props;
 
       {
         post.data.lastUpdated && (
-          <div class="animate flex items-center gap-1.5">
+          <div class="flex items-center gap-1.5">
             <div class="font-base text-sm">
               Last Updated:
               <FormattedDate date={post.data.lastUpdated} />
@@ -47,11 +47,11 @@ const post = Astro.props;
         )
       }
 
-      <div class="animate text-2xl font-semibold text-black dark:text-white">
+      <div class="text-2xl font-semibold text-black dark:text-white">
         {post.data.title}
       </div>
     </div>
-    <article class="animate">
+    <article>
       {post.rendered?.html && <div set:html={post.rendered.html} />}
     </article>
   </Container>
