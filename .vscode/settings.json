@@ -14,5 +14,8 @@
   "editor.quickSuggestions": {
     "strings": "on"
   },
-  "vs-code-prettier-eslint.prettierLast": false // set as "true" to run 'prettier' last not first
+  "vs-code-prettier-eslint.prettierLast": false,
+  "[astro]": {
+    "editor.defaultFormatter": "astro-build.astro-vscode"
+  } // set as "true" to run 'prettier' last not first
 }

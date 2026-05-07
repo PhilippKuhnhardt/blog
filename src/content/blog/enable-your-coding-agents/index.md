@@ -1,7 +1,7 @@
 ---
 title: "Enable Your Coding Agents"
 description: "Some custom tools I build to make my coding agents more efficient"
-date: "04. May 2026"
+date: "04. May 2026 12:00"
 ---
 # Intro 
 Agentic engineering, or vibe coding has taken the industry by storm. Everyone is talking about different agentic harnesses, debating about the ideal system prompts and skills, and comparing benchmarks in search of the most intelligent model. The industry has fuelled this hype. Each release is more capable than the last, and higher benchmark scores are always a major selling point.
