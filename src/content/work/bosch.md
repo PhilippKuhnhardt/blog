@@ -5,4 +5,4 @@ dateStart: "01. Feb 2021"
 dateEnd: "Current"
 ---
 
-Working as full stack web dev, helping to launch multiple internal solutions for automation & agentic use cases.
+Working as a full stack engineer and lead dev building internal AI tooling for the Bosch Group, including a RAG platform and a platform for discovering, building, and using agents.
