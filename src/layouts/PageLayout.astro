@@ -7,15 +7,21 @@ import { SITE } from "@consts";
 type Props = {
   title: string;
   description: string;
+  noindex?: boolean;
+  lang?: string;
 };
 
-const { title, description } = Astro.props;
+const { title, description, noindex = false, lang = "en" } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
-    <Head title={`${title} | ${SITE.NAME}`} description={description} />
+    <Head
+      title={`${title} | ${SITE.NAME}`}
+      description={description}
+      noindex={noindex}
+    />
   </head>
   <body>
     <Header />

@@ -6,7 +6,12 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   site: "https://philippkuhnhardt.de",
-  integrations: [mdx(), sitemap()],
+  integrations: [
+    mdx(),
+    sitemap({
+      filter: (page) => !page.includes("/legal/"),
+    }),
+  ],
 
   vite: {
     plugins: [tailwindcss()],
