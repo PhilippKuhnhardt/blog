@@ -25,6 +25,7 @@
     "@fontsource/lora": "^5.2.8",
     "@tailwindcss/vite": "^4.2.4",
     "@typescript-eslint/eslint-plugin": "^8.59.1",
+    "@vercel/analytics": "^2.0.1",
     "astro": "^6.2.1",
     "clsx": "^2.1.1",
     "eslint-plugin-astro": "^1.7.0",
@@ -42,6 +43,6 @@
     "@typescript-eslint/parser": "^8.59.1",
     "eslint": "^10.2.1",
     "prettier": "^3.8.3",
-"typescript": "^6.0.3"
+    "typescript": "^6.0.3"
   }
 }
