@@ -3,7 +3,6 @@ import Footer from "@components/Footer.astro";
 import Head from "@components/Head.astro";
 import Header from "@components/Header.astro";
 import { SITE } from "@consts";
-import Analytics from "@vercel/analytics/astro";
 
 type Props = {
   title: string;
@@ -23,7 +22,6 @@ const { title, description, noindex = false, lang = "en" } = Astro.props;
       description={description}
       noindex={noindex}
     />
-    <Analytics />
   </head>
   <body>
     <Header />
