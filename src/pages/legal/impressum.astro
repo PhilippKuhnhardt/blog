@@ -2,6 +2,7 @@
 import Container from "@components/Container.astro";
 import Link from "@components/Link.astro";
 import PageLayout from "@layouts/PageLayout.astro";
+import { SITE } from "@consts";
 ---
 
 <PageLayout
@@ -14,6 +15,7 @@ import PageLayout from "@layouts/PageLayout.astro";
     <article>
       <h1>Impressum</h1>
 
+      <h2>Anbieter</h2>
       <p>
         Philipp Kuhnhardt<br />
         Bebelstr. 52<br />
@@ -22,14 +24,13 @@ import PageLayout from "@layouts/PageLayout.astro";
 
       <h2>Kontakt</h2>
       <p>
-        E-Mail: philipps.blog@posteo.de<br />
-        Über das nachfolgende Formular erreichen Sie mich ebenfalls.
+        E-Mail: <Link href={`mailto:${SITE.EMAIL}`}>{SITE.EMAIL}</Link>
       </p>
 
       <form
         action="https://formspree.io/f/mkoyplaz"
         method="POST"
-        class="not-prose flex flex-col gap-3 my-6"
+        class="not-prose my-6 flex flex-col gap-3"
       >
         <label class="flex flex-col gap-1 text-sm">
           <span>Ihre E-Mail-Adresse</span>
@@ -38,7 +39,7 @@ import PageLayout from "@layouts/PageLayout.astro";
             name="email"
             required
             autocomplete="email"
-            class="px-3 py-2 rounded border border-black/15 dark:border-white/20 bg-white/50 dark:bg-black/20 text-black dark:text-white"
+            class="rounded border border-black/15 bg-white/50 px-3 py-2 text-black dark:border-white/20 dark:bg-black/20 dark:text-white"
           />
         </label>
         <label class="flex flex-col gap-1 text-sm">
@@ -46,7 +47,7 @@ import PageLayout from "@layouts/PageLayout.astro";
           <input
             type="text"
             name="subject"
-            class="px-3 py-2 rounded border border-black/15 dark:border-white/20 bg-white/50 dark:bg-black/20 text-black dark:text-white"
+            class="rounded border border-black/15 bg-white/50 px-3 py-2 text-black dark:border-white/20 dark:bg-black/20 dark:text-white"
           />
         </label>
         <label class="flex flex-col gap-1 text-sm">
@@ -55,30 +56,26 @@ import PageLayout from "@layouts/PageLayout.astro";
             name="message"
             rows="6"
             required
-            class="px-3 py-2 rounded border border-black/15 dark:border-white/20 bg-white/50 dark:bg-black/20 text-black dark:text-white resize-y"
+            class="resize-y rounded border border-black/15 bg-white/50 px-3 py-2 text-black dark:border-white/20 dark:bg-black/20 dark:text-white"
           ></textarea>
         </label>
-        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hidden" />
+        <input
+          type="text"
+          name="_gotcha"
+          tabindex="-1"
+          autocomplete="off"
+          class="hidden"
+        />
         <button
           type="submit"
-          class="self-start px-4 py-2 rounded border border-black/20 dark:border-white/30 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out cursor-pointer text-sm"
+          class="self-start rounded border border-black/20 px-4 py-2 text-sm transition-colors duration-300 ease-in-out hover:text-black dark:border-white/30 dark:hover:text-white"
         >
           Nachricht senden
         </button>
       </form>
 
-      <h2>Redaktionell verantwortlich</h2>
       <p>
-        Philipp Kuhnhardt<br />
-        Bebelstr. 52, 70193 Stuttgart
-      </p>
-
-      <p>
-        Quelle: <Link href="https://www.e-recht24.de" external>eRecht24</Link>
-      </p>
-
-      <p>
-        <Link href="/legal/datenschutz">Datenschutzerklärung</Link>
+        <Link href="/legal/datenschutzerklaerung/">Datenschutzerklärung</Link>
       </p>
     </article>
   </Container>

@@ -1,0 +1,50 @@
+---
+import Container from "@components/Container.astro";
+import PageLayout from "@layouts/PageLayout.astro";
+import datenschutzerklaerungHtml from "./_datenschutzerklärung.html?raw";
+---
+
+<PageLayout
+  title="Datenschutzerklärung"
+  description="Datenschutzerklärung gemäß DSGVO."
+  noindex={true}
+  lang="de"
+>
+  <Container>
+    <article class="legal-copy" set:html={datenschutzerklaerungHtml} />
+  </Container>
+</PageLayout>
+
+<style>
+  .legal-copy {
+    line-height: 1.75;
+  }
+
+  .legal-copy :global(h1) {
+    margin-bottom: 2rem;
+  }
+
+  .legal-copy :global(h2) {
+    margin-top: 2rem;
+  }
+
+  .legal-copy :global(h3) {
+    margin-top: 1.5rem;
+  }
+
+  .legal-copy :global(ul) {
+    padding-left: 1.25rem;
+  }
+
+  .legal-copy :global(li) {
+    margin: 0.375rem 0;
+  }
+
+  .legal-copy :global(a) {
+    overflow-wrap: anywhere;
+  }
+
+  .legal-copy :global(.index) {
+    margin: 1rem 0 2rem;
+  }
+</style>
