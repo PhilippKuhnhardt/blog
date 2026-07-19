@@ -23,26 +23,26 @@
     "@astrojs/sitemap": "^3.7.3",
     "@fontsource/inter": "^5.2.8",
     "@fontsource/lora": "^5.2.8",
-    "@tailwindcss/vite": "^4.2.4",
-    "@typescript-eslint/eslint-plugin": "^8.59.1",
+    "@tailwindcss/vite": "^4.3.3",
+    "@typescript-eslint/eslint-plugin": "^8.64.0",
     "astro": "^7.1.1",
     "clsx": "^2.1.1",
     "eslint-plugin-astro": "^1.7.0",
-    "markdown-it": "^14.1.1",
-    "sanitize-html": "^2.17.3",
-    "sharp": "^0.34.5",
-    "tailwind-merge": "^3.5.0",
-    "tailwindcss": "^4.2.4"
+    "markdown-it": "^14.3.0",
+    "sanitize-html": "^2.17.6",
+    "sharp": "^0.35.3",
+    "tailwind-merge": "^3.6.0",
+    "tailwindcss": "^4.3.3"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
-    "@tailwindcss/typography": "^0.5.19",
+    "@tailwindcss/typography": "^0.5.20",
     "@types/markdown-it": "^14.1.2",
     "@types/sanitize-html": "^2.16.1",
-    "@typescript-eslint/parser": "^8.59.1",
-    "eslint": "^10.2.1",
-    "globals": "^17.4.0",
-    "prettier": "^3.8.3",
+    "@typescript-eslint/parser": "^8.64.0",
+    "eslint": "^10.7.0",
+    "globals": "^17.7.0",
+    "prettier": "^3.9.5",
     "typescript": "^6.0.3"
   }
 }
