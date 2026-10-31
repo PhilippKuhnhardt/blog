@@ -26,7 +26,7 @@ const project = Astro.props;
     <div>
       <BackToPrev href="/projects"> Back to projects </BackToPrev>
     </div>
-    <div class="space-y-1 my-10">
+    <div class="space-y-4 my-10">
       <div class="flex items-center gap-1.5">
         <div class="font-base text-sm">
           <FormattedDate date={project.data.date} />
@@ -36,9 +36,9 @@ const project = Astro.props;
           {project.body && readingTime(project.body)}
         </div>
       </div>
-      <div class="text-2xl font-semibold text-black dark:text-white">
+      <h1 class="article-title">
         {project.data.title}
-      </div>
+      </h1>
       {
         (project.data.demoURL || project.data.repoURL) && (
           <nav class="flex gap-1">
